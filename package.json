@@ -1,0 +1,7 @@
+{
+  "name": "stock-inventory-app",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix client run build"
+  }
+}
