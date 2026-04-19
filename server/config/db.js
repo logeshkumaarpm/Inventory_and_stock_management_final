@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 let connectionPromise;
 
 const connectDB = async () => {
+  if (!process.env.MONGO_URI) {
+    throw new Error('Missing MONGO_URI environment variable');
+  }
+
   if (mongoose.connection.readyState === 1) {
     return mongoose.connection;
   }
